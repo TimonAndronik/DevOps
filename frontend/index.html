@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 24px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    h1 { margin-top: 0; }
+    form {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    input, textarea, button {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+    }
+    button {
+      cursor: pointer;
+      border: none;
+      background: #2563eb;
+      color: white;
+      font-weight: 700;
+    }
+    button.secondary {
+      background: #6b7280;
+    }
+    .task-list {
+      display: grid;
+      gap: 12px;
+    }
+    .task {
+      padding: 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      background: #f9fafb;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+    }
+    .task.completed {
+      border-color: #86efac;
+      background: #f0fdf4;
+    }
+    .task h3 {
+      margin: 0 0 8px 0;
+    }
+    .task p {
+      margin: 0;
+      color: #4b5563;
+    }
+    .actions {
+      display: flex;
+      gap: 8px;
+      min-width: 200px;
+      justify-content: flex-end;
+    }
+    .status {
+      margin-bottom: 16px;
+      color: #2563eb;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Task Tracker</h1>
+    <p>Простий web-додаток для лабораторної: frontend + backend + PostgreSQL + Docker Compose.</p>
+    <div class="status" id="status">Завантаження...</div>
+
+    <form id="task-form">
+      <input id="title" type="text" placeholder="Назва задачі" required />
+      <textarea id="description" rows="3" placeholder="Опис"></textarea>
+      <button type="submit">Додати задачу</button>
+    </form>
+
+    <div class="task-list" id="task-list"></div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
