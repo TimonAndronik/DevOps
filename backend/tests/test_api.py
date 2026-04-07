@@ -74,7 +74,7 @@ def test_create_and_list_tasks():
 
 def test_update_task():
     create_response = client.post(
-        "/tasks",
+        "/task",
         json={"title": "Initial task", "description": "", "completed": False},
     )
     task_id = create_response.json()["id"]
